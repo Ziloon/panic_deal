@@ -3,6 +3,10 @@ name = "panic_deal"
 version = "0.1.0"
 edition = "2021"
 
+# 默认退出时使用展开，即回溯栈并清理数据，如果你需要二进制文件越小越好，那么在这里增加这个设置，直接终止。那么内存将由操作系统清理。
+[profile.release]
+panic = 'abort'
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
